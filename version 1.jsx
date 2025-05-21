@@ -191,12 +191,7 @@ export default function InventoryManagement() {
               <option value="out">Out of Stock</option>
               <option value="high">In Stock</option>
             </select>
-            <button
-              onClick={handleAddClick}
-              className="bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg shadow px-5 py-2 font-semibold border border-blue-200 transition"
-            >
-              + Add Product
-            </button>
+            
           </div>
         </div>
         {/* Records, Total */}
@@ -239,6 +234,12 @@ export default function InventoryManagement() {
         >
           Mark Out of Stock
         </button>
+        <button
+              onClick={handleAddClick}
+              className="bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg shadow px-5 py-2 font-semibold border border-blue-200 transition"
+            >
+              + Add Product
+            </button>
       </div>
 
       {/* Products Table */}
@@ -347,19 +348,20 @@ export default function InventoryManagement() {
       </div>
 
       {/* Activity Log */}
-      <div className="mt-6 bg-white rounded shadow p-4">
+      <div className="mt-6 bg-white rounded shadow p-4 max-w-2xl w-full mx-auto">
         <h3 className="text-lg font-semibold text-blue-900 mb-2">Recent Activity</h3>
-        <div className="space-y-2 text-sm">
+        <div className="space-y-2 text-sm max-h-40 overflow-y-auto">
           {activityLog.map((entry, index) => (
             <div key={index} className="flex items-center text-blue-700">
-              <span className="text-xs text-blue-400 mr-2">{entry.time}</span>
-              <span className="font-medium">{entry.user}</span>
-              <span className="mx-1">{entry.action}</span>
-              <span className="text-blue-900 font-semibold">{entry.product}</span>
+            <span className="text-xs text-blue-400 mr-2">{entry.time}</span>
+            <span className="font-medium">{entry.user}</span>
+            <span className="mx-1">{entry.action}</span>
+            <span className="text-blue-900 font-semibold">{entry.product}</span>
             </div>
-          ))}
+        ))}
         </div>
       </div>
+      
 
       {/* Modal */}
       {isModalOpen && (
@@ -474,3 +476,4 @@ export default function InventoryManagement() {
     </div>
   );
 }
+
