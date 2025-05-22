@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Toaster, toast } from 'react-hot-toast';
-
 const PAGE_SIZE_OPTIONS = [10, 20, 40, 80, 100];
-
+//color/
 function getStatusColor(quantity) {
   if (quantity === 0) return 'bg-red-100 text-red-700';
   if (quantity <= 10) return 'bg-yellow-100 text-yellow-700';
   return 'bg-blue-100 text-blue-700';
 }
-
+//main/
 export default function InventoryManagement() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -20,7 +19,7 @@ export default function InventoryManagement() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Pagination
+  // Pagination/
   const [pageSize, setPageSize] = useState(PAGE_SIZE_OPTIONS[0]);
   const [currentPage, setCurrentPage] = useState(1);
 
