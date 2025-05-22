@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Toaster, toast } from 'react-hot-toast';
 const PAGE_SIZE_OPTIONS = [10, 20, 40, 80, 100];
-//color/
+//color//
 function getStatusColor(quantity) {
   if (quantity === 0) return 'bg-red-100 text-red-700';
   if (quantity <= 10) return 'bg-yellow-100 text-yellow-700';
   return 'bg-blue-100 text-blue-700';
 }
-//main/
+
 export default function InventoryManagement() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -19,7 +19,7 @@ export default function InventoryManagement() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Pagination/
+  // Pagination//
   const [pageSize, setPageSize] = useState(PAGE_SIZE_OPTIONS[0]);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -165,7 +165,7 @@ export default function InventoryManagement() {
             </select>
             <button
               onClick={handleAddClick}
-              className="bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg shadow px-5 py-2 font-semibold border border-blue-200 transition"
+              className="bg-violet-600 hover:bg-violet-900 text-blue-100 rounded-lg  px-5 py-2 font-semibold border border-blue-200 transition"
             >
               + Add Product
             </button>
@@ -282,12 +282,12 @@ export default function InventoryManagement() {
             <h2 className="text-blue-900 font-bold text-2xl mb-4 flex items-center gap-2">
               {editingProduct ? (
                 <>
-                  <span className="inline-block w-6 h-6 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center">✏️</span>
+                  <span className="inline-block w-6 h-6 bg-blue-100 text-violet-600 rounded-full flex items-center justify-center">✏️</span>
                   Edit Product
                 </>
               ) : (
                 <>
-                  <span className="inline-block w-6 h-6 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center">➕</span>
+                  <span className="inline-block w-6 h-6 bg-blue-100 text-violet-600 rounded-full flex items-center justify-center">➕</span>
                   Add New Product
                 </>
               )}
@@ -353,7 +353,7 @@ export default function InventoryManagement() {
                 </button>
                 <button
                   type="submit"
-                  className="bg-blue-100 hover:bg-blue-200 text-blue-700 rounded px-4 py-2 transition font-semibold border border-blue-200"
+                  className="bg-violet-600 hover:bg-violet-900 text-blue-100 rounded px-4 py-2 transition font-semibold border border-blue-200"
                 >
                   {editingProduct ? 'Update' : 'Add'} Product
                 </button>
